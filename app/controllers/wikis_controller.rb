@@ -1,4 +1,4 @@
-class WikiController < ApplicationController
+class WikisController < ApplicationController
   def index
     @wiki = Wiki.all
   end
