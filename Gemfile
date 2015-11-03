@@ -39,7 +39,8 @@ gem 'figaro', '1.0'
 gem 'faker'
 #pundit makes it easier to authorize different users for differnet tasks.
 gem 'pundit'
-
+#Stripe is a payment gateway allowing users to upgrade or simply pay for goods off the site. 
+gem 'stripe'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
