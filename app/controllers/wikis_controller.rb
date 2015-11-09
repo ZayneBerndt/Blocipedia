@@ -5,7 +5,7 @@ class WikisController < ApplicationController
   end
 
   def show
-    @wiki = Wiki.find(params[:id])
+  
   end
 
   def new
@@ -54,4 +54,10 @@ class WikisController < ApplicationController
      end
    end
 
-end
+   private 
+
+   def wiki_params
+   params.require(:wiki).permit(:id, :title, :body, :public)
+ end 
+end 
+

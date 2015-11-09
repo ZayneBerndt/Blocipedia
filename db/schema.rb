@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151101095015) do
+ActiveRecord::Schema.define(version: 20151108101533) do
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string   "account_id"
+    t.string   "references"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subscriptions", ["references"], name: "index_subscriptions_on_references"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

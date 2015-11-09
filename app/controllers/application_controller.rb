@@ -8,12 +8,14 @@ class ApplicationController < ActionController::Base
   rescue_from Pundit::NotAuthorizedError do |exception|
   redirect_to root_url, alert: exception.message
   
+  def after_sign_in_path_for(resource)
+    wikis_path
   end
 
 
-  protected
-
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up)<< :name
+  def user_not_authorized
+    flash[:alert] = "You are not authorized to perform this action."
+    redirect_to(request.referrer || root_path)
   end
-end
+ end
+end 
