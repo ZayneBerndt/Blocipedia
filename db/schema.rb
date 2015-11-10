@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151108101533) do
+ActiveRecord::Schema.define(version: 20151110072357) do
+
+  create_table "collaborators", force: :cascade do |t|
+  end
 
   create_table "subscriptions", force: :cascade do |t|
     t.string   "account_id"
